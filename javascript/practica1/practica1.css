@@ -3,10 +3,17 @@ body {
     padding: 0;
 }
 
+#pantallasInicio {
+    background-color: aqua;
+}
+
 #pantallaJugador {
     /* Centramos el contenedor */
     margin: 0 auto;
-
+    background-image: url('ruta_de_la_imagen.jpg');
+    background-size: cover;  /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-position: center;  /* Centra la imagen en el fondo */
+    background-repeat: no-repeat;
     /* display: none; */
 }
 
@@ -15,5 +22,5 @@ body {
 }
 
 button {
-    
+    background-color: aqua;
 }
