@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#pantallaJugador {
+    /* Centramos el contenedor */
+    margin: 0 auto;
+
+    /* display: none; */
+}
+
+#jugadas {
+    margin: 0 auto;
+}
+
+button {
+    
+}

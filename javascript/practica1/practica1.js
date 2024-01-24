@@ -1,1 +1,1 @@
-//Aquí irá la priogramación del juego en un principio
+//Aquí irá la programación del juego en un principio
