@@ -4,23 +4,42 @@ body {
 }
 
 #pantallasInicio {
-    background-color: aqua;
+    background-image: url('../img/velocidadluz.jpg');
 }
 
 #pantallaJugador {
     /* Centramos el contenedor */
     margin: 0 auto;
-    background-image: url('ruta_de_la_imagen.jpg');
+    background-image: url('../img/mustafarduel.png');
     background-size: cover;  /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
     background-position: center;  /* Centra la imagen en el fondo */
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /* Que la imagen no se repita */
     /* display: none; */
 }
 
 #jugadas {
     margin: 0 auto;
+    /* border: ; */
 }
 
 button {
     background-color: aqua;
+    
+}
+
+#boton-importante {
+    padding: 10px 20px;
+    background-color: #f4f135;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#boton-importante:hover {
+    background-color: #c2c037;
+}
+
+#boton-importante:active {
+    background-color: #96941a;
 }
