@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Captura de eventos</title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                background-color: rgb(37, 208, 154);
+            }
+
+            #contenedor{
+                margin: 0 auto; /* Centrar el elemento horizontalmente */
+                width: 45%;
+                padding: 5%;
+                border: 6px solid rgb(14, 86, 49);
+            }
+
+            #a, #b, #c, #d, #e, #f{
+                border: 3px solid rgb(49, 90, 205);
+                padding: 10%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contenedor">
+            <h3>Estrategia Bubbling</h3>
+            <div id="bubbling">
+                <div id="a">
+                    A
+                    <div id="b">
+                        B
+                        <div id="c">
+                            C
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Estrategia Capturing</h3>
+            <div id="capturing">
+                <div id="d">
+                    D
+                    <div id="e">
+                        E
+                        <div id="f">
+                            F
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="capturandoeventos.js"></script>
+    </body>
+</html>

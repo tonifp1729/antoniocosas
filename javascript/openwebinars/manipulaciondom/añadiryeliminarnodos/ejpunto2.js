@@ -78,3 +78,11 @@ document.getElementById("replaceWith").addEventListener('click', evento => {
     //Reemplazamos el primer elemento hijo del elemento seleccionado(tabla)
     document.querySelector("table").firstElementChild.replaceWith(fila)
 })
+
+document.getElementById("innerHTML").addEventListener('click', evento => {
+    //Añadimos un caption antes del inicio
+    document.querySelector("th").insertAdjacentHTML("beforebegin","<caption>TABLA DE MUESTRA</caption>")
+
+    //Añadimos una fila antes del final
+    document.querySelector("table").insertAdjacentHTML("beforeend","<th colspan='4'>Hola muy buenas</th>")
+})
