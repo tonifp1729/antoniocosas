@@ -22,7 +22,7 @@ let botonIniciar = document.getElementById("botonIniciar")
 let musica = document.querySelector("audio")
 
 //pantallaJugador
-let contenedorJugada = document.getElementById("jugada")
+let contenedorJugada = document.getElementById("jugadas")
 let botonTerminar = document.getElementById("botonTerminar")
 
 //pantallaFinal
@@ -41,6 +41,14 @@ botonIniciar.addEventListener('click', e => {
 botonTerminar.addEventListener('click', e => {
   pantallaJugador.style.display = 'none'
   pantallaFinal.style.display = 'flex'
+})
+
+//Hemos capturado el evento click dentro del contenedor
+contenedorJugada.addEventListener('click', e => {
+  //Si se clica sobre un elemento de tipo botón dentro del contenedor qeu hemos capturado, el div jugada, guardamos el texto.
+  if(e.target.tagName === 'button') {
+    let jugadaSeleccionada = e.target.innerText;
+  }
 })
 
 function finJuego() {
