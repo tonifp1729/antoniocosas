@@ -20,12 +20,12 @@ img {
 #pantallaInicial {
     background-image: url('../img/velocidadluz.jpg');
     background-size: cover;
-    align-items: center;
-    justify-content: center;
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #pantallaJugador {
@@ -34,9 +34,9 @@ img {
     background-position: center;
     height: 100%;
     width: 100%;
-    justify-content: center;
-    display: flex;
+    display: none;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -46,7 +46,7 @@ img {
     background-position: center;
     height: 100%;
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
