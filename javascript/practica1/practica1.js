@@ -22,6 +22,7 @@ const botonIniciar = document.getElementById("botonIniciar")
 const musica = document.querySelector("audio")
 
 //pantallaJugador
+let marcador = document.getElementById("marcador")
 const contenedorJugada = document.getElementById("jugadas")
 const botonTerminar = document.getElementById("botonTerminar")
 let puntosJugador
@@ -158,6 +159,29 @@ function hacerJugada(jugadaSeleccionada) {
   }else if(resultado===2) {
     //Victoria = +1 a jugador
     puntosJugador++
+  }
+
+  marcador.innerText(puntosJugador + " - " + puntosRival)
+
+  terminarJuego(puntosJugador,puntosRival)
+}
+
+function terminarJuego(puntosJugador, puntosRival) {
+  let final=0
+  
+  if (puntosJugador===10) {
+    final=1
+  }else if(puntosRival===10) {
+    final=2
+  }else if(puntosJugador===10 && puntosRival===10) {
+    final=3
+  }
+
+  if (final!==0) {
+    pantallaJugador.style.display = 'none'
+    pantallaFinal.style.display = 'flex'
+    musica.pause();
+    musica.currentTime = 0;
   }
 }
 
