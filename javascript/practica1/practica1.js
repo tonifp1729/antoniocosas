@@ -23,6 +23,7 @@ const musica = document.querySelector("audio")
 
 //pantallaJugador
 let marcador = document.getElementById("marcador")
+let jugadaSeleccionada
 const contenedorJugada = document.getElementById("jugadas")
 const botonTerminar = document.getElementById("botonTerminar")
 let puntosJugador
@@ -63,7 +64,7 @@ contenedorJugada.addEventListener('click', e => {
 function aleatorio() {
   const min = 1
   const max = 7
-  let numero = Math.floor(Math.random() * (max - min + 1) + minimo);
+  let numero = Math.floor(Math.random() * (max - min + 1) + min);
   return numero;
 }
 
@@ -99,6 +100,7 @@ function hacerJugada(jugadaSeleccionada) {
       }else {
         resultado=1
       }
+      break
     case "forma2": //HECHO
       if(rival==="forma3" || rival==="forma6" || rival==="forma1") {
         resultado=2
@@ -107,7 +109,8 @@ function hacerJugada(jugadaSeleccionada) {
       }else {
         resultado=0
       }
-    case "forma3": //HECHO
+      break
+    case "forma3": 
       if(rival==="forma4" || rival==="forma6" || rival==="forma1") {
         resultado=2
       }else if(rival==="forma2" || rival==="forma7") {
@@ -115,7 +118,8 @@ function hacerJugada(jugadaSeleccionada) {
       }else {
         resultado=0
       }
-    case "forma4": //HECHO
+      break
+    case "forma4": 
       if(rival==="forma2" || rival==="forma6" || rival==="forma7" || rival==="forma1") {
         resultado=2
       }else if(rival==="forma3" || rival==="forma5") {
@@ -123,7 +127,8 @@ function hacerJugada(jugadaSeleccionada) {
       }else {
         resultado=0
       }
-    case "forma5": //HECHO
+      break
+    case "forma5": 
       if(rival==="forma3" || rival==="forma4" || rival==="forma1") {
         resultado=2
       }else if(rival==="forma2" || rival==="forma7") {
@@ -131,7 +136,8 @@ function hacerJugada(jugadaSeleccionada) {
       }else {
         resultado=0
       }
-    case "forma6": //HECHO
+      break
+    case "forma6": 
       if(rival==="forma5" || rival==="forma1") {
         resultado=2
       }else if(rival==="forma2" || rival==="forma3" || rival==="forma4" || rival==="forma7") {
@@ -139,7 +145,8 @@ function hacerJugada(jugadaSeleccionada) {
       }else {
         resultado=0
       }
-    case "forma7": //HECHO
+      break
+    case "forma7": 
       if(rival==="forma4") {
         resultado=1
       }else if(rival==="forma7") {
@@ -147,6 +154,7 @@ function hacerJugada(jugadaSeleccionada) {
       }else {
         resultado=2
       }
+      break
   }
 
   if(resultado===0) {
@@ -161,7 +169,7 @@ function hacerJugada(jugadaSeleccionada) {
     puntosJugador++
   }
 
-  marcador.innerText(puntosJugador + " - " + puntosRival)
+  marcador.textContent = puntosJugador + " - " + puntosRival
 
   terminarJuego(puntosJugador,puntosRival)
 }
