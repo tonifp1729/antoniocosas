@@ -23,8 +23,8 @@ const musica = document.querySelector("audio")
 
 //pantallaJugador
 let marcador = document.getElementById("marcador")
+const jugadas = document.querySelectorAll(".jugadas")
 let jugadaSeleccionada
-const contenedorJugada = document.getElementById("jugadas")
 const botonTerminar = document.getElementById("botonTerminar")
 let puntosJugador
 let puntosRival
@@ -40,6 +40,7 @@ botonIniciar.addEventListener('click', e => {
   musica.play()
   puntosJugador = 0
   puntosRival = 0
+  marcador.textContent = puntosJugador + " - " + puntosRival
 })
 
 
@@ -52,13 +53,11 @@ botonTerminar.addEventListener('click', e => {
 })
 
 //Hemos capturado el evento click dentro del contenedor
-contenedorJugada.addEventListener('click', e => {
-  //Si se clica sobre un elemento de tipo botón dentro del contenedor que hemos capturado, el div jugada, guardamos el texto.
-  if(e.target.tagName === 'button') {
-    jugadaSeleccionada = e.target.id;
-  }
-
-  hacerJugada(jugadaSeleccionada)
+jugadas.forEach(jugada => {
+  jugada.addEventListener('click', e => {
+    jugadaSeleccionada = e.target.id
+    hacerJugada(jugadaSeleccionada)
+  })
 })
 
 function aleatorio() {
@@ -156,7 +155,7 @@ function hacerJugada(jugadaSeleccionada) {
       }
       break
   }
-
+  
   if(resultado===0) {
     //Empate = +1 a ambos
     puntosJugador++
