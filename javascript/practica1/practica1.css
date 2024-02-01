@@ -41,7 +41,7 @@ img {
 }
 
 #pantallaFinal {
-    background: radial-gradient(circle, rgb(21, 129, 206), #43cde5);
+    background: radial-gradient(circle, rgb(69, 69, 69), #888888);
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -69,7 +69,7 @@ h1 {
     justify-content: center;
 }
 
-#jugadas {
+#jugada {
     margin: 2vh;
 }
 

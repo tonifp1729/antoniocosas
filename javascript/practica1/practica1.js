@@ -10,7 +10,6 @@
   * Juyo/Vaapad. Pierde contra ataru, gana todos los demás.
   **/
 
-
 //Inicializamos las vistas, elementos con los que vamos a trabajar:
 const pantallaInicial = document.getElementById("pantallaInicial")
 const pantallaJugador = document.getElementById("pantallaJugador")
@@ -23,6 +22,8 @@ const musica = document.querySelector("audio")
 
 //pantallaJugador
 let marcador = document.getElementById("marcador")
+let manoJugador = document.getElementById("manoJugador")
+let manoAdversario = document.getElementById("manoAdversario")
 const jugadas = document.querySelectorAll(".jugadas")
 let jugadaSeleccionada
 const botonTerminar = document.getElementById("botonTerminar")
@@ -31,6 +32,7 @@ let puntosRival
 
 //pantallaFinal
 const botonVolver = document.getElementById("botonVolver")
+const resultadoFinal = document.querySelectorAll("h1")[1]
 
 
 //VISTA - pantallaInicial
@@ -48,8 +50,11 @@ botonIniciar.addEventListener('click', e => {
 botonTerminar.addEventListener('click', e => {
   pantallaJugador.style.display = 'none'
   pantallaFinal.style.display = 'flex'
+
   musica.pause();
   musica.currentTime = 0;
+
+  resultadoFinal.textContent ="Has escapado..."
 })
 
 //Hemos capturado el evento click dentro del contenedor
@@ -72,18 +77,25 @@ function jugadaRival() {
 
   switch (numero) {
     case 1:
+      manoAdversario.src = "../img/Shii-Cho.jpg"
       return "forma1"
     case 2:
+      manoAdversario.src = "../img/Makashi.jpg"
       return "forma2"
     case 3:
+      manoAdversario.src = "../img/Soresu.jpg"
       return "forma3"
     case 4:
+      manoAdversario.src = "../img/Ataru.jpg"
       return "forma4"
     case 5:
+      manoAdversario.src = "../img/Djem-So.jpg"
       return "forma5"
     case 6:
+      manoAdversario.src = "../img/Niman.jpg"
       return "forma6"
     case 7:
+      manoAdversario.src = "../img/Juyo.jpg"
       return "forma7"
   }
 }
@@ -93,14 +105,14 @@ function hacerJugada(jugadaSeleccionada) {
   let resultado
 
   switch (jugadaSeleccionada) {
-    case "forma1": //HECHO
+    case "forma1":
       if(rival==="forma1") {
         resultado=0
       }else {
         resultado=1
       }
       break
-    case "forma2": //HECHO
+    case "forma2":
       if(rival==="forma3" || rival==="forma6" || rival==="forma1") {
         resultado=2
       }else if(rival==="forma4" || rival==="forma7") {
@@ -189,6 +201,16 @@ function terminarJuego(puntosJugador, puntosRival) {
     pantallaFinal.style.display = 'flex'
     musica.pause();
     musica.currentTime = 0;
+    
+    if (final===1) {
+      pantallaFinal.style.background = "radial-gradient(circle, rgb(21, 129, 206), #43cde5)"
+      resultadoFinal.textContent ="¡¡VICTORIA!!"
+    }else if(final===2) {
+      pantallaFinal.style.background = "radial-gradient(circle, rgb(206, 21, 21), #e54343)"
+      resultadoFinal.textContent ="¡¡DERROTA!!"
+    }else if(final=3) {
+      resultadoFinal.textContent ="¡¡EMPATE!!"
+    }
   }
 }
 
